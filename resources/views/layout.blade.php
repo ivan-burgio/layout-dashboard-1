@@ -13,7 +13,7 @@
 </head>
 
 <body class="bg-slate-200 text-black">
-    {{-- @include('templates.nav') --}}
+    @include('templates.nav')
     {{-- @include('templates.globo') --}}
     {{-- @include('components.alerts') --}}
     @yield('content')

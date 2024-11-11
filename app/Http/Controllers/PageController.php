@@ -8,7 +8,6 @@ class PageController extends Controller
 {
     public function index()
     {
-        $inicio = true;
         $data = [
             'header' => [
                 'title' => 'Nombre del Blog',
@@ -22,8 +21,8 @@ class PageController extends Controller
                 'linea1' => '',
                 'linea2' => ''
             ],
-            'propiedades' => array_slice($this->infoPropiedades(), 0, 3),
-            'iconos' => $this->infoIconos(),
+            'propiedades' => $this->infoPropiedades(),
+            'vendedores' => $this->infoVendedores(),
             'globos' => [
                 ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
                 ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
@@ -33,98 +32,7 @@ class PageController extends Controller
             ],
         ];
 
-        return view('pages.index', ['data' => $data, 'inicio' => $inicio]);
-    }
-
-    public function nosotros()
-    {
-        $data = [
-            'header' => [
-                'title' => 'Nombre del Blog',
-            ],
-            'info' => [
-                'titulo' => 'Conoce Sobre Nosotros',
-                'imagen' => '/img/nosotros.jpg',
-                'texto' => [
-                    '25 años de experiencia en el sector.',
-                    'Nos especializamos en brindar soluciones personalizadas que se adaptan a las necesidades de nuestros clientes.',
-                    'Nuestro equipo está compuesto por expertos altamente capacitados y comprometidos con la calidad.',
-                    'Estamos dedicados a mejorar constantemente nuestros servicios y a la satisfacción del cliente.',
-                ],
-            ],
-            'iconos' => $this->infoIconos(),
-            'globos' => [
-                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
-            ],
-        ];
-
-        return view('pages.nosotros', ['data' => $data]);
-    }
-
-    public function anuncios()
-    {
-        $data = [
-            'header' => [
-                'title' => 'Nombre del Blog',
-            ],
-            'propiedades' => $this->infoPropiedades(),
-            'globos' => [
-                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
-                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'La informacion de los anuncios puede mostrarse, crearce y modificarse desde una pagian de gestión para esto.'],
-            ],
-        ];
-
-        return view('pages.anuncios', ['data' => $data]);
-    }
-
-    public function contacto()
-    {
-        $data = [
-            'header' => [
-                'title' => 'Nombre del Blog',
-            ],
-            'globos' => [
-                ['info' => 'Para la implementacion del formulario de contacto se necesita de una pagina de gestion, aunque se puede implementar un enlace para mandar email directamente al correo correspondiente.'],
-                ['info' => 'Campos del formulario totalmente a conveniencia del cliente.'],
-            ],
-        ];
-
-        return view('pages.contacto', ['data' => $data]);
-    }
-
-    public function anuncio($slug)
-    {
-        $data = [
-            'header' => [
-                'title' => 'Nombre del Blog',
-            ],
-            'anuncios' => $this->infoPropiedades(),
-            'globos' => [
-                ['info' => 'Los colores, animaciones, efectos y componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'Imágenes y textos quedan a criterio del cliente.'],
-            ],
-        ];
-
-        $anuncioEncontrado = null;
-        foreach ($data['anuncios'] as $anuncio) {
-            if ($anuncio['slug'] === $slug) {
-                $anuncioEncontrado = $anuncio;
-                break;
-            }
-        }
-
-        if (!$anuncioEncontrado) {
-            abort(404);
-        }
-
-        $data['anuncioSeleccionado'] = $anuncioEncontrado;
-
-        return view('pages.anuncio', ['data' => $data]);
+        return view('pages.index', ['data' => $data]);
     }
 
     public function infoPropiedades()
@@ -225,23 +133,26 @@ class PageController extends Controller
         return $data;
     }
 
-    public function infoIconos()
+    public function infoVendedores()
     {
         $data = [
             [
-                'titulo' => 'Seguridad',
-                'imagen' => '/img/icono1.svg',
-                'texto' => 'Disfruta de una experiencia segura con nuestras propiedades. Implementamos tecnología de punta para garantizar la protección de tu hogar y tus seres queridos.'
+                'id' => 1,
+                'nombre' => 'Juan',
+                'apellido' => 'Pérez',
+                'telefono' => '555-1234',
             ],
             [
-                'titulo' => 'Precio',
-                'imagen' => '/img/icono2.svg',
-                'texto' => 'Ofrecemos una variedad de propiedades que se adaptan a todos los presupuestos. Encuentra el hogar perfecto sin comprometer la calidad.'
+                'id' => 2,
+                'nombre' => 'Ana',
+                'apellido' => 'Gómez',
+                'telefono' => '555-5678',
             ],
             [
-                'titulo' => 'Tiempo',
-                'imagen' => '/img/icono3.svg',
-                'texto' => 'Garantizamos un tiempo de entrega rápido para que puedas disfrutar de tu nueva propiedad en el menor tiempo posible. Nuestro objetivo es hacer que el proceso de mudanza sea lo más ágil y eficiente.'
+                'id' => 3,
+                'nombre' => 'Luis',
+                'apellido' => 'Rodríguez',
+                'telefono' => '555-9876',
             ],
         ];
 
