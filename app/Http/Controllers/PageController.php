@@ -9,18 +9,6 @@ class PageController extends Controller
     public function index()
     {
         $data = [
-            'header' => [
-                'title' => 'Nombre del Blog',
-                'description' => [
-                    'line1' => 'Frase de ejemplo 1',
-                    'line2' => 'Frase de ejemplo 2',
-                ],
-                'background_image' => 'img/banner.webp',
-            ],
-            'extra' => [
-                'linea1' => '',
-                'linea2' => ''
-            ],
             'propiedades' => $this->infoPropiedades(),
             'vendedores' => $this->infoVendedores(),
             'globos' => [
@@ -33,6 +21,22 @@ class PageController extends Controller
         ];
 
         return view('pages.index', ['data' => $data]);
+    }
+
+    public function propiedadesCrear()
+    {
+        $data = [
+            'vendedores' => $this->infoVendedores(),
+            'globos' => [
+                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
+                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
+                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
+                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
+                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+            ],
+        ];
+
+        return view('pages.propiedades.crear', ['data' => $data]);
     }
 
     public function infoPropiedades()
@@ -138,14 +142,12 @@ class PageController extends Controller
         $data = [
             [
                 'id' => 1,
-                'nombre' => 'Juan',
-                'apellido' => 'Pérez',
+                'nombre' => 'Juan Pérez',
                 'telefono' => '555-1234',
             ],
             [
                 'id' => 2,
-                'nombre' => 'Ana',
-                'apellido' => 'Gómez',
+                'nombre' => 'Ana Gómez',
                 'telefono' => '555-5678',
             ],
             [

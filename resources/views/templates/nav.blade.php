@@ -2,7 +2,7 @@
     <div class="w-11/12 max-w-screen-xl mx-auto flex flex-row justify-between py-6">
         <div class="flex items-center justify-between w-full md:w-auto">
             <a class="text-white font-bold uppercase md:flex md:items-center md:m-0" href="/">
-                {{ $data['header']['title'] }}
+                Nombre del Blog
             </a>
 
             <div class="flex items-center md:hidden">
