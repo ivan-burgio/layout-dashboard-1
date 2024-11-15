@@ -39,6 +39,21 @@ class PageController extends Controller
         return view('pages.propiedades.crear', ['data' => $data]);
     }
 
+    public function vendedoresCrear()
+    {
+        $data = [
+            'globos' => [
+                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
+                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
+                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
+                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
+                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+            ],
+        ];
+
+        return view('pages.vendedores.crear', ['data' => $data]);
+    }
+
     public function infoPropiedades()
     {
         $data = [
@@ -152,8 +167,7 @@ class PageController extends Controller
             ],
             [
                 'id' => 3,
-                'nombre' => 'Luis',
-                'apellido' => 'Rodríguez',
+                'nombre' => 'Luis Rodríguez',
                 'telefono' => '555-9876',
             ],
         ];
