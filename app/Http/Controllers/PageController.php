@@ -54,6 +54,21 @@ class PageController extends Controller
         return view('pages.vendedores.crear', ['data' => $data]);
     }
 
+    public function blogsCrear()
+    {
+        $data = [
+            'globos' => [
+                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
+                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
+                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
+                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
+                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+            ],
+        ];
+
+        return view('pages.blogs.crear', ['data' => $data]);
+    }
+
     public function infoPropiedades()
     {
         $data = [
