@@ -39,6 +39,22 @@ class PageController extends Controller
         return view('pages.propiedades.crear', ['data' => $data]);
     }
 
+    public function propiedadesActualizar()
+    {
+        $data = [
+            'vendedores' => $this->infoVendedores(),
+            'globos' => [
+                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
+                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
+                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
+                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
+                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+            ],
+        ];
+
+        return view('pages.propiedades.actualizar', ['data' => $data]);
+    }
+
     public function vendedoresCrear()
     {
         $data = [
@@ -54,6 +70,21 @@ class PageController extends Controller
         return view('pages.vendedores.crear', ['data' => $data]);
     }
 
+    public function vendedoresActualizar()
+    {
+        $data = [
+            'globos' => [
+                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
+                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
+                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
+                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
+                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+            ],
+        ];
+
+        return view('pages.vendedores.actualizar', ['data' => $data]);
+    }
+
     public function blogsCrear()
     {
         $data = [
@@ -67,6 +98,21 @@ class PageController extends Controller
         ];
 
         return view('pages.blogs.crear', ['data' => $data]);
+    }
+
+    public function blogsActualizar()
+    {
+        $data = [
+            'globos' => [
+                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
+                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
+                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
+                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
+                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+            ],
+        ];
+
+        return view('pages.blogs.actualizar', ['data' => $data]);
     }
 
     public function infoPropiedades()
