@@ -39,10 +39,11 @@ class PageController extends Controller
         return view('pages.propiedades.crear', ['data' => $data]);
     }
 
-    public function propiedadesActualizar()
+    public function propiedadesActualizar($slug)
     {
         $data = [
             'vendedores' => $this->infoVendedores(),
+            'propiedades' => $this->infoPropiedades(),
             'globos' => [
                 ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
                 ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
@@ -51,6 +52,20 @@ class PageController extends Controller
                 ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
             ],
         ];
+
+        $propiedadEncontrado = null;
+        foreach ($data['propiedades'] as $propiedad) {
+            if ($propiedad['slug'] === $slug) {
+                $propiedadEncontrado = $propiedad;
+                break;
+            }
+        }
+
+        if (!$propiedadEncontrado) {
+            abort(404);
+        }
+
+        $data['propiedadSeleccionada'] = $propiedadEncontrado;
 
         return view('pages.propiedades.actualizar', ['data' => $data]);
     }
@@ -70,9 +85,10 @@ class PageController extends Controller
         return view('pages.vendedores.crear', ['data' => $data]);
     }
 
-    public function vendedoresActualizar()
+    public function vendedoresActualizar($slug)
     {
         $data = [
+            'vendedores' => $this->infoVendedores(),
             'globos' => [
                 ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
                 ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
@@ -81,6 +97,20 @@ class PageController extends Controller
                 ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
             ],
         ];
+
+        $vendedorEncontrado = null;
+        foreach ($data['vendedores'] as $vendedor) {
+            if ($vendedor['slug'] === $slug) {
+                $vendedorEncontrado = $vendedor;
+                break;
+            }
+        }
+
+        if (!$vendedorEncontrado) {
+            abort(404);
+        }
+
+        $data['vendedorSeleccionado'] = $vendedorEncontrado;
 
         return view('pages.vendedores.actualizar', ['data' => $data]);
     }
@@ -218,16 +248,19 @@ class PageController extends Controller
         $data = [
             [
                 'id' => 1,
+                'slug' => 'vendedor1',
                 'nombre' => 'Juan Pérez',
                 'telefono' => '555-1234',
             ],
             [
                 'id' => 2,
+                'slug' => 'vendedor2',
                 'nombre' => 'Ana Gómez',
                 'telefono' => '555-5678',
             ],
             [
                 'id' => 3,
+                'slug' => 'vendedor3',
                 'nombre' => 'Luis Rodríguez',
                 'telefono' => '555-9876',
             ],

@@ -51,10 +51,10 @@
                                 <form method="POST" action="/propiedades/eliminar" class="w-full">
                                     <input type="hidden" name="id" value="{{ $propiedad['id'] }}">
                                     <button type="submit"
-                                        class="bg-red-600 text-white uppercase font-bold py-2 px-4 rounded hover:bg-red-700 w-full cursor-pointer"
-                                        ><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+                                        class="bg-red-600 text-white uppercase font-bold py-2 px-4 rounded hover:bg-red-700 w-full cursor-pointer"><i
+                                            class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
                                 </form>
-                                <a href="/propiedades/actualizar?id={{ $propiedad['id'] }}"
+                                <a href="/propiedades/actualizar/{{ $propiedad['slug'] }}"
                                     class="bg-yellow-600 text-white uppercase font-bold py-2 px-4 rounded hover:bg-yellow-700 w-full text-center">
                                     <i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>
                                 </a>
@@ -72,7 +72,9 @@
             <thead>
                 <tr class="bg-green-700 text-white">
                     @foreach (array_keys($data['vendedores'][0]) as $header)
-                        <th class="px-6 py-4 text-center uppercase font-semibold">{{ ucfirst($header) }}</th>
+                        @if (!in_array($header, ['slug']))
+                            <th class="px-6 py-4 text-center uppercase font-semibold">{{ ucfirst($header) }}</th>
+                        @endif
                     @endforeach
                     <th class="px-6 py-4 text-center uppercase font-semibold">Acciones</th>
                 </tr>
@@ -80,17 +82,19 @@
             <tbody>
                 @foreach ($data['vendedores'] as $vendedor)
                     <tr class="border-b border-gray-400 {{ $loop->even ? 'bg-gray-50' : '' }}">
-                        @foreach ($vendedor as $value)
-                            <td class="px-6 py-4 text-center">{{ $value }}</td>
+                        @foreach ($vendedor as $key => $value)
+                            @if (!in_array($key, ['slug']))
+                                <td class="px-6 py-4 text-center">{{ $value }}</td>
+                            @endif
                         @endforeach
                         <td class="px-6 py-4 flex justify-center space-x-2">
                             <form method="POST" action="/vendedores/eliminar" class="w-full">
                                 <input type="hidden" name="id" value="{{ $vendedor['id'] }}">
                                 <button type="submit"
-                                    class="bg-red-600 text-white uppercase font-bold py-2 px-4 rounded hover:bg-red-700 w-full cursor-pointer"
-                                    ><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+                                    class="bg-red-600 text-white uppercase font-bold py-2 px-4 rounded hover:bg-red-700 w-full cursor-pointer"><i
+                                        class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
                             </form>
-                            <a href="/vendedores/actualizar?id={{ $vendedor['id'] }}"
+                            <a href="/vendedores/actualizar/{{ $vendedor['slug'] }}"
                                 class="bg-yellow-600 text-white uppercase font-bold py-2 px-4 rounded hover:bg-yellow-700 w-full text-center">
                                 <i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>
                             </a>
@@ -133,8 +137,8 @@
                                 <form method="POST" action="/blogs/eliminar" class="w-full">
                                     <input type="hidden" name="id" value="{{ $blog['id'] }}">
                                     <button type="submit"
-                                        class="bg-red-700 text-white uppercase font-bold py-2 px-4 rounded hover:bg-red-800 w-full cursor-pointer"
-                                        ><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+                                        class="bg-red-700 text-white uppercase font-bold py-2 px-4 rounded hover:bg-red-800 w-full cursor-pointer"><i
+                                            class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
                                 </form>
                                 <a href="/blogs/actualizar?id={{ $blog['id'] }}"
                                     class="bg-yellow-700 text-white uppercase font-bold py-2 px-4 rounded hover:bg-yellow-800 w-full text-center">
