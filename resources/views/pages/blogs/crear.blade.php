@@ -25,7 +25,7 @@
                     class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
             </fieldset>
 
-            <input type="submit" value="Guardar Blog"
+            <input type="submit" value="Guardar Blog" disabled
                 class="bg-green-700 text-white uppercase font-bold py-2 px-4 rounded hover:bg-green-800">
         </form>
 

@@ -50,7 +50,7 @@
                             <td class="px-6 py-4 flex justify-center space-x-2">
                                 <form method="POST" action="/propiedades/eliminar" class="w-full">
                                     <input type="hidden" name="id" value="{{ $propiedad['id'] }}">
-                                    <button type="submit"
+                                    <button type="submit" disabled
                                         class="bg-red-600 text-white uppercase font-bold py-2 px-4 rounded hover:bg-red-700 w-full cursor-pointer"><i
                                             class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
                                 </form>
@@ -88,9 +88,9 @@
                             @endif
                         @endforeach
                         <td class="px-6 py-4 flex justify-center space-x-2">
-                            <form method="POST" action="/vendedores/eliminar" class="w-full">
+                            <form method="POST" action="" class="w-full">
                                 <input type="hidden" name="id" value="{{ $vendedor['id'] }}">
-                                <button type="submit"
+                                <button type="submit" disabled
                                     class="bg-red-600 text-white uppercase font-bold py-2 px-4 rounded hover:bg-red-700 w-full cursor-pointer"><i
                                         class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
                             </form>
@@ -134,9 +134,9 @@
                                 @endif
                             @endforeach
                             <td class="px-6 py-4 flex justify-center space-x-2">
-                                <form method="POST" action="/blogs/eliminar" class="w-full">
+                                <form method="POST" action="" class="w-full">
                                     <input type="hidden" name="id" value="{{ $blog['id'] }}">
-                                    <button type="submit"
+                                    <button type="submit" disabled
                                         class="bg-red-700 text-white uppercase font-bold py-2 px-4 rounded hover:bg-red-800 w-full cursor-pointer"><i
                                             class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
                                 </form>

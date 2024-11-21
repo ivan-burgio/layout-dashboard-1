@@ -65,7 +65,7 @@
                 </select>
             </fieldset>
         
-            <input type="submit" value="Crear Propiedad"
+            <input type="submit" value="Crear Propiedad" disabled
                 class="bg-green-700 text-white uppercase font-bold py-2 px-4 rounded hover:bg-green-800">
         </form>
         
