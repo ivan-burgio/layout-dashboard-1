@@ -12,11 +12,10 @@ class PageController extends Controller
             'propiedades' => $this->infoPropiedades(),
             'vendedores' => $this->infoVendedores(),
             'globos' => [
+                ['info' => 'Este es un ejemplo de una pagina de gestion sencilla.'],
                 ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
                 ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
-                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+                ['info' => 'Se pueden agregar tantas tablas y columnas como sean necesarias.'],
             ],
         ];
 
@@ -28,11 +27,9 @@ class PageController extends Controller
         $data = [
             'vendedores' => $this->infoVendedores(),
             'globos' => [
-                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
-                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
-                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+                ['info' => 'Ejemplo de formulario mas completo.'],
+                ['info' => 'Campos del formulario totalmente a conveniencia.'],
+                ['info' => 'Estilos personalizables.'],
             ],
         ];
 
@@ -45,11 +42,9 @@ class PageController extends Controller
             'vendedores' => $this->infoVendedores(),
             'propiedades' => $this->infoPropiedades(),
             'globos' => [
-                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
-                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
-                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+                ['info' => 'Al editar se rellenan los campos con la informacion previa.'],
+                ['info' => 'Campos del formulario totalmente a conveniencia.'],
+                ['info' => 'Estilos personalizables.'],
             ],
         ];
 
@@ -74,11 +69,9 @@ class PageController extends Controller
     {
         $data = [
             'globos' => [
-                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
-                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
-                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+                ['info' => 'Ejemplo de formulario mas sencillo.'],
+                ['info' => 'Campos del formulario totalmente a conveniencia.'],
+                ['info' => 'Estilos personalizables.'],
             ],
         ];
 
@@ -90,11 +83,9 @@ class PageController extends Controller
         $data = [
             'vendedores' => $this->infoVendedores(),
             'globos' => [
-                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
-                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
-                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+                ['info' => 'Al editar se rellenan los campos con la informacion previa.'],
+                ['info' => 'Campos del formulario totalmente a conveniencia.'],
+                ['info' => 'Estilos personalizables.'],
             ],
         ];
 
@@ -119,11 +110,9 @@ class PageController extends Controller
     {
         $data = [
             'globos' => [
-                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
-                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
-                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+                ['info' => 'Ejemplo de formulario sencillo.'],
+                ['info' => 'Campos del formulario totalmente a conveniencia.'],
+                ['info' => 'Estilos personalizables.'],
             ],
         ];
 
@@ -134,11 +123,9 @@ class PageController extends Controller
     {
         $data = [
             'globos' => [
-                ['info' => 'Toda la información que hay en la pagina es de ejemplo.'],
-                ['info' => 'Todos los componentes pueden ser ajustados según preferencia del cliente.'],
-                ['info' => 'La cantidad y disposición de los elementos es completamente configurable.'],
-                ['info' => 'Imagenes, textos y colores quedan a criterio del cliente.'],
-                ['info' => 'La cantidad de paginas o links tambien queda al gusto y necesidades.'],
+                ['info' => 'Al editar se rellenan los campos con la informacion previa.'],
+                ['info' => 'Campos del formulario totalmente a conveniencia.'],
+                ['info' => 'Estilos personalizables.'],
             ],
         ];
 
